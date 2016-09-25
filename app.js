@@ -2,28 +2,30 @@ var express = require('express')
 var app = express()
 var path = require('path')
 var http = require('http').Server(app);
-
-// Initalize Firebase
-// var config = {
-//     apiKey: "AIzaSyCbVOgsRXntXxz5Y73oehWRkz8_oKD7XVs",
-//     authDomain: "warc-d335d.firebaseapp.com",
-//     databaseURL: "https://warc-d335d.firebaseio.com",
-//     storageBucket: "warc-d335d.appspot.com",
-//     messagingSenderId: "1090986097926"
-// };
-// firebase.initializeApp(config);
-
+var bodyParser = require('body-parser');
+var currID ='';
 
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 app.get('/', function(req, res){
 	res.sendFile(__dirname + '/public/index.html');
 });
 
-app.post('/record', function(req, res){
-	//Get Medical Record
+app.get('/record', function(req, res){
+	res.sendFile(__dirname + '/public/record.html');
+});
+
+app.get('/getID', function(req, res){
+	res.send({id: currID})
 })
 
-app.listen(3000, function () {
-  console.log('App listening on port 3000!');
+app.post('/postID', function(req, res){
+	currID = req.body.id;
+	res.send({redirect: '/record'});
+})
+
+http.listen(3000, function(){
+	console.log('listening on *:3000');
 });

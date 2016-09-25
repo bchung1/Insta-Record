@@ -1,0 +1,21 @@
+{
+    "1234": {
+        "personal_info": {
+            "name": "Nancy Smith",
+            "age": "53",
+            "address": "65 South Boston Street Fort Walton Beach, FL 32547"
+        },
+        "allergies": ["sulfa drugs - rash", "Cipro - rash, Benadryl - causes mild dystonic reaction"],
+        "medications": [
+            "Theophyline(Uniphyl) 600 mg qhs– bronchodilator by increasing cAMP used for treating asthma",
+            "Diltiazem 300 mg qhs– Ca channel blocker used to control hypertension",
+            "Omecprazole(Prilosec) 20 mg daily(reflux)– PPI for treatment of ulcers",
+            "Metformin 500 mg qam– biguanide used to treat diabetes"
+        ],
+        "surgicalHistory": [
+            "s/p Cardiac stent in 1999",
+            "s/p hystarectomy in 1970s",
+            "s/p kidney stone retrieval 1960s"
+        ]
+    }
+}
